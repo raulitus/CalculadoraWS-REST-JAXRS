@@ -101,4 +101,13 @@ public class OperacionesWS {
         System.out.println("El factorial de" + num1 + "!=" + resultado);
         return Response.ok(resultado, MediaType.APPLICATION_JSON).build();
     }
+
+    @GET
+    @Produces(value = MediaType.APPLICATION_JSON)
+    @Path("/raizcuadrada")//hace referencia al path /operaciones/raizcuadrada
+    public Response raizCuadrada(@QueryParam("num1") double num1) {
+        double resultado = Math.sqrt(num1);
+        System.out.println("Raíz cuadrada de " + num1 + "=" + resultado);
+        return Response.ok(resultado, MediaType.APPLICATION_JSON).build();
+    }
 }
